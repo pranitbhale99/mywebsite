@@ -1,0 +1,124 @@
+/* style.css - Custom styles based on original index.css */
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+/* Custom Color Variables (Simplified from oklch to standard hex/rgb for simplicity) */
+:root {
+    /* Primary color (oklch(0.65 0.12 60) is a shade of orange/brown) */
+    --color-primary: #D97706; /* Tailwind amber-600 */
+    --color-primary-light: #FCD34D; /* Tailwind amber-300 */
+    --color-primary-dark: #B45309; /* Tailwind amber-700 */
+    
+    /* Background/Foreground (Simplified light theme) */
+    --color-background: #ffffff;
+    --color-foreground: #1f2937; /* Tailwind gray-800 */
+    
+    /* Card/Popover/Muted (Simplified) */
+    --color-card: #ffffff;
+    --color-border: #e5e7eb; /* Tailwind gray-200 */
+}
+
+/* Apply variables to Tailwind classes */
+.bg-background { background-color: #F5F5DC; }
+.text-foreground { color: var(--color-foreground); }
+.bg-primary\/10 { background-color: rgba(217, 119, 6, 0.1); }
+.border-primary\/20 { border-color: rgba(217, 119, 6, 0.2); }
+.text-primary { color: var(--color-primary); }
+.hover\:text-primary:hover { color: var(--color-primary); }
+.bg-primary { background-color: var(--color-primary); }
+.hover\:bg-primary\/90:hover { background-color: rgba(217, 119, 6, 0.9); }
+.bg-primary\/5 { background-color: rgba(217, 119, 6, 0.05); }
+
+/* Custom Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* bold */
+}
+
+/* Custom Container Utility (from original index.css) */
+.container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem; /* 24px - tablet padding */
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 2rem; /* 32px - desktop padding */
+        padding-right: 2rem;
+        max-width: 1280px; /* Standard content width */
+    }
+}
+
+/* Custom Animations (from original index.css) */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out; }
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-25%) }
+    50% { transform: translateY(0) }
+}
+.animate-bounce { animation: bounce 1s infinite; }
+
+/* Utility for text gradients (since Tailwind's bg-clip-text is used) */
+.bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.text-transparent {
+    color: transparent;
+}
+
+/* Additional utility for the fixed header shadow */
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal specific styles to ensure it's on top */
+#image-modal {
+    display: none; /* Controlled by JS */
+}
+#image-modal.active {
+    display: flex;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #b45309, #d97706, #facc15);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-size: larger;
+  }
+  
+  .image-slide {
+    animation: slideFade 0.6s ease-in-out;
+}
+
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
