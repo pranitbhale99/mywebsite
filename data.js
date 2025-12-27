@@ -299,7 +299,7 @@ export const GALLERY_IMAGES = [
 ];
 
 export const SOCIAL_LINKS = {
-  facebook: "#",
+  facebook: "https://google.com",
   twitter: "https://google.com",
   linkedin: "#",
   instagram: "#",
