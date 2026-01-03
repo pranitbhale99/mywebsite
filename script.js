@@ -179,9 +179,8 @@ document.addEventListener("DOMContentLoaded", () => {
                   product.id
                 }">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="${currentImage}" style='object-fit:contain;' alt="${
-          product.name
-        }" class="product-image w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <img  src="${currentImage}" data-product-id="${product.id}"
+                        style='object-fit:contain;' alt="${product.name}" class="product-image w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                         <div class="absolute top-3 right-3 bg-black/70 text-white px-3 py-1 rounded-full text-sm font-semibold" style='color:#716767; font-weight:bold;'>${
                           currentImageIndex + 1
                         }/${productImages.length}</div>
@@ -297,6 +296,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const handleProductInteraction = (e) => {
     const productId = e.target.dataset.productId;
+    console.log(productId)
     if (!productId) return;
 
     const product = PRODUCTS.find((p) => p.id == productId);
@@ -316,8 +316,10 @@ document.addEventListener("DOMContentLoaded", () => {
       renderProducts();
     } else if (
       e.target.classList.contains("view-details") ||
+      e.target.classList.contains("product-image") ||
       e.target.closest("[data-product-id]")
     ) {
+
       const currentImageIndex = imageIndices[product.id] || 0;
       selectedProduct = {
         ...product,
@@ -401,10 +403,10 @@ locationEl.target = "_blank";
 locationEl.rel = "noopener noreferrer";
 
 const aboutImages = [
-  "/images/categories/aboutus/about1.png",
-  "/images/categories/aboutus/about2.png",
+  "/images/categories/aboutus/about1.jpg",
+  "/images/categories/aboutus/about2.jpg",
   "/images/categories/aboutus/about3.jpeg",
-  "/images/categories/aboutus/about4.png",
+  "/images/categories/aboutus/about4.jpg",
 ];
 
 const track = document.getElementById("about-slider-track");
@@ -442,8 +444,8 @@ document.getElementById("about-next").addEventListener("click", () => {
 
 export function downloadBrochure() {
   const link = document.createElement("a");
-  link.href = "/brochure.pdf"; // local or external URL
-  link.download = "Kalpavriksha-Brochure.pdf";
+  link.href = "/CocoVriksha Brochure.pdf"; // local or external URL
+  link.download = "CocoVriksha-Brochure.pdf";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
@@ -458,7 +460,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   const subject = document.getElementById("subject").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  const phoneNumber = 8080782005; // e.g. 919876543210 (without +)
+  const phoneNumber = 8799839403; // e.g. 919876543210 (without +)
 
   const text = `
     *New Contact Message*  

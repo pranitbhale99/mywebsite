@@ -1,7 +1,7 @@
 // data.js
 // All constants and product data extracted from kalpavriksha_website/client/src/const.ts
 
-export const APP_LOGO = "/images/logo.png"; // CocoVriksha logo
+export const APP_LOGO = "/images/logo.jpg"; // CocoVriksha logo
 
 // Company Information
 export const COMPANY_NAME = "CocoVriksha";
@@ -13,7 +13,7 @@ export const COMPANY_LOCATION = "Naigaon East, Maharashtra 401208, India";
 export const COMPANY_SLOGAN = "Shaping a Greener Tomorrow !";
 
 export const HERO_BACKGROUNDS = [
-  "/images/bg1.png",
+  "/images/bg1.jpg",
   "/images/bg2.jpeg",
   "/images/black soil 2.jpg",
 ];
@@ -281,6 +281,26 @@ export const PRODUCTS = [
     images: ["/images/categories/wall hanging pot/wall hanging 1.png",
              "/images/categories/wall hanging pot/wall hanging 2.jpg",
              "/images/categories/wall hanging pot/wall hanging 3.jpg",
+            ],
+  },
+  {
+    id: 15,
+    name: "Coco Coir Pots",
+    description: "Sustainable & Renewable Coir Pots",
+    category: "Coir Pots",
+    benefits: [
+      "Eco-Friendly & Biodegradable.",
+      "Promotes Strong Root Growth.",
+      "Optimal Water Retention & Drainage.",
+      "Improves Soil Health.",
+      "Chemical-Free & Safe.",
+      "Adds a natural, aesthetic look to any home or garden décor.",
+    ],
+    image: "/images/categories/Coco Coir Pot/coir pot1.jpg",
+    images: ["/images/categories/Coco Coir Pot/coir pot1.jpg",
+             "/images/categories/Coco Coir Pot/coir pot2.jpg",
+             "/images/categories/Coco Coir Pot/coir pot3.jpg",
+             "/images/categories/Coco Coir Pot/coir pot4.jpg",
             ],
   },
 ];
